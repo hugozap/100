@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trees</title>
+
+	<style type="text/css">
+	.container{
+		width:100%;
+		height:100%;
+		background-color: #fff;
+	}
+
+	.credits{
+		position: fixed;
+		bottom: 20px;
+		right:20px;
+		font-size: 16px;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<svg id='canvas'  height="100%" viewBox="0 0 1000 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+		</svg>
+
+	</div>
+
+	<div class="credits">
+		<a href="http://www.twitter.com/hugozap">@hugozap</a>
+	</div>
+	
+	<script type="text/javascript" src='jquery.js'></script>
+	<script type="text/javascript" src='velocity.min.js'></script>
+	<script type="text/javascript" src='snap.svg.js'></script>
+
+	<script type="text/javascript">
+	var svg = document.querySelector('#canvas');
+	var s = Snap('#canvas');
+	Snap.load("oval1.svg",function(ov){
+		s.append(ov);
+
+		var p = ov.paper.select("path");
+		//animate oval.
+		var l = p.getTotalLength();
+		p.attr("strokeDasharray", l);
+		p.attr("strokeDashoffset", l);
+		$(p.node).velocity({
+			strokeDashoffset:0
+		},{loop:0, duration:5000,complete:function(){
+			
+		}})
+	})
+
+
+
+
+	
+	
+
+	</script>
+</body>
+</html>
