@@ -1,0 +1,15 @@
+{
+  "name": "mandala",
+  "version": "0.0.1",
+  "description": "mandala generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mandala",
+    "art"
+  ],
+  "author": "hugozap",
+  "license": "MIT"
+}

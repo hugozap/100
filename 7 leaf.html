@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarde lluviosa</title>
+</head>
+<body>
+
+
+<h1>Hojitas bellas</h1>
+
+<svg id="canvas" width="1000px" height="500px" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Flowers</title>
+    <desc> Flower animation.</desc>
+    <defs>
+    	<g id="hoja" sketch:type="MSLayerGroup" transform="translate(1.000000, 0.000000)">
+    	    <path d="M10.8684965,122.803297 C10.8684965,122.803297 -9.75234691,99.3891544 6.94071681,68.8130101 C23.6337805,38.2368659 44.8695312,42.2099294 50.3870109,25.683701 C55.9044906,9.1574726 50.387013,0.0482650698 50.387013,0.0482650698 C50.387013,0.0482650698 77.2331966,65.8624086 62.45397,91.1188901 C47.6747435,116.375372 10.8684965,122.803297 10.8684965,122.803297 Z" id="Path-1" stroke="#103648" fill="#E7DDCC" sketch:type="MSShapeGroup"></path>
+    	    <path d="M11.3401432,121.784618 C11.3401432,121.784618 16.075157,90.304989 31.3157586,78.1339328 C46.5563603,65.9628766 47.4476585,49.8524024 47.4476585,49.8524024" id="Path-5" stroke="#979797" opacity="0.476912313" sketch:type="MSShapeGroup"></path>
+    	</g>
+    </defs>
+
+    
+    
+</svg>
+
+<script type='text/javascript' src='jquery.js'></script>
+<script type='text/javascript' src='snap.svg.js'></script>
+<script type="text/javascript" src='velocity.min.js'></script>
+<script type="text/javascript">
+
+var snap = Snap('#canvas');
+	
+function addLeaf(snap, angle, color, x, y){
+	var leaf = snap.use("hoja");
+	leaf.attr(
+		{
+			id:"hoja",
+			x: x,
+			y: y,
+			fill:color
+		}
+	)
+
+
+	var leafbox = leaf.getBBox();
+	leaf.transform("r"+angle+" "+leafbox.cx+","+leafbox.cy);
+	
+}
+
+
+	addLeaf(snap, 0, "#D9ECA7", 100, 100)
+	addLeaf(snap, 90, "#F8C592", 200, 200)
+	addLeaf(snap, 180, "#D9ECA7", 300, 300)
+	addLeaf(snap, 270, "#D9ECA7", 400, 400)
+
+
+
+</script>
+</body>
+</html>
